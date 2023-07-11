@@ -8,4 +8,8 @@
 
 -   mining or staking rewards are also taxed --\> \>= 250€ yearly threshold
 
+-   you can offset crypto losses against your profits; you can also carry forward losses to future financial years
+
+-   taxes should be calculated based on First-in-First-Out principle
+
 -   check income tax buckets here : <https://koinly.io/guides/crypto-tax-germany/>
