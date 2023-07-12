@@ -25,15 +25,26 @@ devtools::install_github("oa36/CryptoTax")
 ```r
 library(CryptoTax)
 
-# EXPORT AND RETRIEVE trades and ledgers
+## your kraken API keys
+public_key <- Sys.getenv("YOUR-PUBLIC-KEY")
+private_key <- Sys.getenv("YOUR-PRIVATE-KEY")
+
+# get balances
+get_available_balance()[["result"]] %>%
+  available_balance %>%
+  unlist() %>%
+  stack() %>%
+  dplyr::mutate(values = round(as.numeric(values), 2)) %>%
+  dplyr::filter(values > 0)
+
+# export and retrieve trades and ledgers
 start_time <- as.integer(as.POSIXct("2020-01-01 00:00:00", tz = "UTC"))
 end_time <- as.integer(as.POSIXct("2023-01-01 00:00:00", tz = "UTC"))
 
-#create an export reprot
 export_report_ledgers <- generate_export_report(start_time=start_time, end_time=end_time,report_type = "ledgers", description = "my_ledger")
 export_report_trades <-  generate_export_report(start_time=start_time, end_time=end_time,report_type = "trades", description = "my_trades")
 
-#get trades and ledger dataframes
+#get exported trades and ledger dataframes
 trades_df <- retrieve_export_data(export_report_trades$result$id)
 ledger_df <- retrieve_export_data(export_report_ledgers$result$id)
 ```
