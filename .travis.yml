@@ -12,10 +12,7 @@ before_install:
 # define system dependencies that your R package needs
 addons:
   apt:
-    sources:
-      - r-packages-precise
     packages:
-      - r-base-dev
       - libmagick++-dev
       - libharfbuzz-dev
       - libfreetype6-dev
