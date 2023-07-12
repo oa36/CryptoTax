@@ -5,7 +5,11 @@
 [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/MyRPackage)](https://cran.r-project.org/package=MyRPackage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/YourUsername/MyRPackage/master.svg)](https://codecov.io/github/YourUsername/MyRPackage?branch=master)
 
-CryptoTax is an R package that helps you retrieve your data and calculate your profit/loss from Kraken.
+CryptoTax is an R package designed to help you fetch your data seamlessly from [Kraken](https://www.kraken.com). Currently, the package empowers you to:
+
+- **Access Available Balances:** Fetch up-to-date balance details from your Kraken account.
+- **Create Export Reports:** Generate exportable reports of [trades or ledgers](https://support.kraken.com/hc/en-us/articles/115000302707-Differences-between-ledger-and-trades-history)
+- **Load Export Reports:** Access and load your previously generated reports as dataframes, simplifying your data analysis process.
 
 ## Installation
 
@@ -37,19 +41,3 @@ ledger_df <- retrieve_export_data(export_report_ledgers$result$id)
 ## Development
 
 To contribute, fork this repository, make your changes, and submit a pull request.
-
-# CryptoTax
-
--   crypto taxs in germany are income taxes and considered as private assest
-
--   if hold for less than a year -\> you pay income tax --\> holding less than a year includes selling or swapping your crypto or spending it on goods
-
--   if you hold crypto for more than a year --\> its tax free
-
--   mining or staking rewards are also taxed --\> \>= 250€ yearly threshold
-
--   you can offset crypto losses against your profits; you can also carry forward losses to future financial years
-
--   taxes should be calculated based on First-in-First-Out principle
-
--   check income tax buckets here : <https://koinly.io/guides/crypto-tax-germany/>
