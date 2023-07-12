@@ -3,7 +3,7 @@ services:
 
 before_install:
   - docker pull rocker/r-base:4.1.3
-  - docker run -d -p 127.0.0.1:80:8787 rocker/r-base:4.1.3 /bin/sh -c "cd /usr; R CMD build ."
+  - docker run -d -p 127.0.0.1:8787:8787 rocker/r-base:4.1.3 /bin/sh -c "cd /usr; R CMD build ."
   - docker ps -a
 
 # define system dependencies that your R package needs
@@ -20,4 +20,4 @@ addons:
 
 # run tests
 script:
-  - docker run -d -p 127.0.0.1:80:8787 rocker/r-base:4.1.3 /bin/sh -c "cd /usr; R CMD check *tar.gz"
+  - docker run -d -p 127.0.0.1:8787:8787 rocker/r-base:4.1.3 /bin/sh -c "cd /usr; R CMD check *tar.gz"
