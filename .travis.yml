@@ -18,10 +18,3 @@ addons:
 script:
   - R CMD build .
   - R CMD check *tar.gz
-
-# specify the different versions of R to test against
-matrix:
-  include:
-    - r: oldrel
-    - r: release
-    - r: devel
