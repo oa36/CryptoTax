@@ -1,16 +1,19 @@
 language: R
+r: 4.1.3
 sudo: false
 cache: packages
-
-# specify the R version
-r:
-  - 4.1.3
 
 # define system dependencies that your R package needs
 addons:
   apt:
+    sources:
+      - r-packages-precise
     packages:
+      - r-base-dev
       - libmagick++-dev
+      - libharfbuzz-dev
+      - libfreetype6-dev
+      - libfribidi-dev
 
 # run tests
 script:
