@@ -1,3 +1,6 @@
+language: R
+cache: packages
+
 services:
   - docker
 
