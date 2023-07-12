@@ -1,9 +1,7 @@
 # CryptoTax
 
-[![Build Status](https://travis-ci.org/YourUsername/MyRPackage.svg?branch=master)](https://travis-ci.org/YourUsername/MyRPackage)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MyRPackage)](https://cran.r-project.org/package=MyRPackage)
-[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/MyRPackage)](https://cran.r-project.org/package=MyRPackage)
-[![Coverage Status](https://img.shields.io/codecov/c/github/YourUsername/MyRPackage/master.svg)](https://codecov.io/github/YourUsername/MyRPackage?branch=master)
+[![Build Status](https://travis-ci.org/oa36/CryptoTax.svg?branch=master)](https://travis-ci.org/oa36/CryptoTax)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/CryptoTax)](https://cran.r-project.org/package=CryptoTax)
 
 CryptoTax is an R package designed to help you fetch your data seamlessly from [Kraken](https://www.kraken.com). Currently, the package empowers you to:
 
