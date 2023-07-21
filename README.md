@@ -8,6 +8,7 @@ CryptoTax is an R package designed to help you fetch your data seamlessly from [
 - **Access Available Balances:** Fetch up-to-date balance details from your Kraken account.
 - **Create Export Reports:** Generate exportable reports of [trades or ledgers](https://support.kraken.com/hc/en-us/articles/115000302707-Differences-between-ledger-and-trades-history)
 - **Load Export Reports:** Access and load your previously generated reports as dataframes, simplifying your data analysis process.
+- **Calculate Profit:** Calculate your realized (EUR) profit using FIFO (first in first out) principle.
 
 ## Installation
 
@@ -42,10 +43,17 @@ end_time <- as.integer(as.POSIXct("2023-01-01 00:00:00", tz = "UTC"))
 export_report_ledgers <- generate_export_report(start_time=start_time, end_time=end_time,report_type = "ledgers", description = "my_ledger")
 export_report_trades <-  generate_export_report(start_time=start_time, end_time=end_time,report_type = "trades", description = "my_trades")
 
-#get exported trades and ledger dataframes
+# get exported trades and ledger dataframes
 trades_df <- retrieve_export_data(export_report_trades$result$id)
 ledger_df <- retrieve_export_data(export_report_ledgers$result$id)
+
+# calculate profit
+ledger_trades <- transform_ledger_to_trades(ledger_df)
+calculate_profit_fifo(ledger_trades)
 ```
+
+## Profit Calculation Disclaimer   
+Please note that the profit calculation functionality currently only supports realized gains from selling cryptocurrency for EUR. The calculation logic is based on my personal portfolio and, as such, there may be specific edge cases that have not been accounted for. Users seeking to utilize this functionality may need to adapt the profit calculation function to cater to their specific use-cases or to comply with their region's tax laws.
 
 ## Development
 
